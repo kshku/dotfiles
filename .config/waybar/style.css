@@ -2,12 +2,23 @@
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: "JetBrainsMono Nerd Font Mono", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 13px;
-    border-radius: 100;
+    border-radius: 100px;
     background-color: transparent;
 }
 
-#workspaces {
+.modules-left {
     background-color: rgba(0, 0, 0, 0.2);
+}
+
+.modules-center {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.modules-right {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+#workspaces {
 }
 
 #workspaces button {
@@ -27,25 +38,8 @@
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* you can set a style on hover for any module like this */
-#pulseaudio:hover {
-    background-color: #a37800;
-}
-
-
-
-#workspaces button.focused {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
-}
-
 #workspaces button.urgent {
     background-color: #eb4d4b;
-}
-
-#mode {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
 }
 
 #clock,

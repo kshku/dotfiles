@@ -7,7 +7,8 @@
     "mode": "dock",
 
     "modules-left": [
-        "hyprland/workspaces"
+        "hyprland/workspaces",
+        "custom/rhyprpaper"
     ],
 
     "modules-center": [
@@ -66,7 +67,7 @@
         "format": "{title}",
         "format-alt": "{initialTitle}",
         // class, title, initialClass, initialTitle
-        // "max-length": 50,
+        "max-length":   30,
         // "rewrite": "",
         // "separate-outputs": false,
         "icon": true,
@@ -211,9 +212,9 @@
         "format": "{icon} {volume}%",
         "tooltip": false,
         "format-muted": " Muted",
-        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +1%",
-        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -1%",
+        "on-click": "pamixer -t",
+        "on-scroll-up": "pamixer -i 1",
+        "on-scroll-down": "pamixer -d 1",
         "scroll-step": 100,
         "format-icons": {
             "headphone": "",
@@ -234,9 +235,9 @@
         "format": "{format_source}",
         "format-source": " {volume}%",
         "format-source-muted": " Muted",
-        "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
-        "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +1%",
-        "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -1%",
+        "on-click": "pamixer --default-source -t",
+        "on-scroll-up": "pamixer --default-source -i 1",
+        "on-scroll-down": "pamixer --default-source -d 1",
         "scroll-step": 100
     },
 
@@ -288,5 +289,11 @@
         "exec": "~/Git/dotfiles/scripts/dunst.sh",
         "on-click": "dunstctl set-paused toggle",
         "restart-interval": 1
+    },
+
+    "custom/rhyprpaper": {
+        "exec": "~/Git/dotfiles/scripts/rhyprpaper.sh",
+        "interval": 60,
+        "format": ""
     }
 }
