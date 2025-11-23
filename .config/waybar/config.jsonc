@@ -265,25 +265,29 @@
 
     "custom/power": {
         "format": "",
-        "tooltip": false,
+        "tooltip": true,
+        "tooltip-format": "Power off",
         "on-click": "systemctl poweroff"
     },
 
     "custom/quit": {
         "format": "󰗼",
-        "tooltip": false,
+        "tooltip": true,
+        "tooltip-format": "Log out",
         "on-click": "hyprctl dispatch exit"
     },
 
     "custom/lock": {
         "format": "󰍁",
-        "tooltip": false,
+        "tooltip": true,
+        "tooltip-format": "Lock",
         "on-click": "loginctl lock-session"
     },
 
     "custom/reboot": {
         "format": "󰜉",
-        "tooltip": false,
+        "tooltip": true,
+        "tooltip-format": "Reboot system",
         "on-click": "systemctl reboot"
     },
 
@@ -296,7 +300,8 @@
     "custom/rhyprpaper": {
         "exec": "~/Git/dotfiles/scripts/rhyprpaper.sh",
         "interval": 60,
-        "format": ""
+        "format": "",
+        "tooltip": false
     },
 
     "idle_inhibitor": {
