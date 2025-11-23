@@ -12,6 +12,7 @@
     ],
 
     "modules-center": [
+        "clock",
         "hyprland/window",
         "custom/dunst"
     ],
@@ -19,7 +20,7 @@
     "modules-right": [
         "privacy",
         "tray",
-        "clock",
+        "idle_inhibitor",
         "network",
         "bluetooth",
         "battery",
@@ -145,7 +146,8 @@
 
     "bluetooth": {
         "format": " {status}",
-        "format-disabled": " ", // an empty format will hide the module
+        "format-disabled": " {status}",
+        "on-click": "rfkill toggle bluetooth",
         "format-connected": " {num_connections}",
         "tooltip-format": "{device_alias}",
         "tooltip-format-connected": " {device_enumerate}",
@@ -243,7 +245,7 @@
 
     "group/power-group": {
         // orthogonal, horizontal, vertical, inherit
-        "orientation": "orthogonal",
+        "orientation": "inherit",
         "modules": [
             "custom/lock",
             "custom/quit",
@@ -252,7 +254,7 @@
         ],
         "drawer": {
             "transition-duration": 500,
-            "children-class": "not-power",
+            "children-class": "power-drawer",
             "transition-left-to-right": false,
             "click-to-reveal": false
         }
@@ -295,5 +297,13 @@
         "exec": "~/Git/dotfiles/scripts/rhyprpaper.sh",
         "interval": 60,
         "format": ""
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
     }
 }
