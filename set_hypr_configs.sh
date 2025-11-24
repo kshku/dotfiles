@@ -1,7 +1,7 @@
 #!/bin/sh
 
 directories="hypr waybar dunst"
-packages="hyprland hypridle hyprcursor hyprlock hyprpaper hyprpolkitagent xdg-desktop-portal-hyprland dunst waybar"
+packages="hyprland hypridle hyprcursor hyprlock hyprpaper hyprpolkitagent xdg-desktop-portal-hyprland dunst waybar cliphist"
 
 echo "Copying config files..."
 
