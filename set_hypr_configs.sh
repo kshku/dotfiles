@@ -1,8 +1,8 @@
 #!/bin/sh
 
 directories="hypr waybar dunst"
-packages="hyprland hypridle hyprcursor hyprlock hyprpaper hyprpolkitagent xdg-desktop-portal-hyprland dunst waybar cliphist adw-gtk-theme xdg-desktop-portal-gtk"
-aur_packages="hyprqt6engine adwaita-qt5 adwaita-qt6"
+packages="hyprland hypridle hyprcursor hyprlock hyprpaper hyprpolkitagent xdg-desktop-portal-hyprland dunst waybar cliphist adw-gtk-theme xdg-desktop-portal-gtk wtype"
+aur_packages="hyprqt6engine adwaita-qt5 adwaita-qt6 wofi-emoji"
 
 echo "Copying config files..."
 
