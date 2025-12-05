@@ -4,9 +4,10 @@ directories="hypr waybar dunst"
 
 packages="hyprland hypridle hyprcursor hyprlock hyprpaper hyprpolkitagent
 xdg-desktop-portal-hyprland dunst waybar cliphist adw-gtk-theme
-xdg-desktop-portal-gtk wtype brightnessctl pamixer"
+xdg-desktop-portal-gtk wtype brightnessctl pamixer
+hyprpicker"
 
-aur_packages="hyprqt6engine adwaita-qt5 adwaita-qt6 wofi-emoji"
+aur_packages="hyprqt6engine adwaita-qt5 adwaita-qt6 wofi-emoji hyprshot"
 
 echo "Copying config files..."
 
