@@ -9,4 +9,4 @@ WALLPAPER=$(find "$WALLPAPER_DIR" -type f ! -name "$(basename "$CURRENT_WALL")" 
 cp -f "$WALLPAPER" "$WALLPAPER_DIR/.current_rhyprpaper"
 
 # Apply the selected wallpaper
-hyprctl hyprpaper reload ,"$WALLPAPER" 
+hyprctl hyprpaper wallpaper ", $WALLPAPER, cover"
