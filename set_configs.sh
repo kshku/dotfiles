@@ -1,6 +1,7 @@
 #!/bin/sh
 
-directories="hypr waybar dunst"
+#directories="alacritty dunst hypr kitty waybar"
+directories="$(ls .config)"
 
 packages="hyprland hypridle hyprcursor hyprlock hyprpaper hyprpolkitagent
 xdg-desktop-portal-hyprland dunst waybar cliphist adw-gtk-theme
