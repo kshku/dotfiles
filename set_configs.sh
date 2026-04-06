@@ -3,11 +3,6 @@
 #directories="alacritty dunst hypr kitty waybar"
 directories="$(ls .config)"
 
-#packages="hyprland hypridle hyprcursor hyprlock hyprpaper hyprpolkitagent
-#xdg-desktop-portal-hyprland dunst waybar cliphist adw-gtk-theme
-#xdg-desktop-portal-gtk wtype brightnessctl pamixer
-#hyprpicker"
-#aur_packages="hyprqt6engine adwaita-qt5 adwaita-qt6 wofi-emoji hyprshot"
 pacman_packages="$(cat pacman_packages.txt)"
 aur_packages="$(cat aur_packages.txt)"
 
