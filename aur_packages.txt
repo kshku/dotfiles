@@ -1,4 +1,0 @@
-hyprqt6engine
-adwaita-qt5
-adwaita-qt6
-wofi-emoji
