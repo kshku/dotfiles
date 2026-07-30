@@ -1,0 +1,27 @@
+packages:
+  pacman:
+    - hyprland
+    - hypridle
+    - hyprcursor
+    - hyprlock
+    - hyprpaper
+    - hyprpolkitagent
+    - xdg-desktop-portal-hyprland
+    - dunst
+    - waybar
+    - cliphist
+    - adw-gtk-theme
+    - xdg-desktop-portal-gtk
+    - wtype
+    - brightnessctl
+    - pamixer
+    - hyprpicker
+    - hyprshot
+  aur:
+    - hyprqt6engine
+    - adwaita-qt5
+    - adwaita-qt6
+    - wofi-emoji
+
+hardware:
+  backlight: "intel_backlight"

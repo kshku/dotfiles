@@ -1,0 +1,4 @@
+#!/bin/sh
+
+sudo pacman -S --needed {{ range .packages.pacman }}{{ . | quote }} {{ end }}
+yay -S --needed {{ range .packages.aur }}{{ . | quote }} {{ end }}

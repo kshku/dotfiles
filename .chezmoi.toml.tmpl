@@ -1,0 +1,17 @@
+{{- if not (stat (joinPath .chezmoi.homeDir ".config/chezmoi/key.txt")) -}}
+{{ writeToStdout (print "\nAge key not found. To decrypt encrypted_* files on this machine:\n") -}}
+{{ writeToStdout (print "  1. Copy from another machine:\n") -}}
+{{ writeToStdout (print "     scp user@host:.config/chezmoi/key.txt ~/.config/chezmoi/key.txt\n") -}}
+{{ writeToStdout (print "  2. Or generate a new key (requires re-encrypting all encrypted_* files):\n") -}}
+{{ writeToStdout (print "     chezmoi age keygen -o ~/.config/chezmoi/key.txt\n\n") -}}
+{{ end -}}
+
+sourceDir = "~/Git/dotfiles"
+encryption = "age"
+
+[age]
+    identity = "~/.config/chezmoi/key.txt"
+    recipient = "age16pr3sh6h809mqpa3fn0ut38pl82ggcmjnwmg4u2zsy4yxg4r54kq3dctlw"
+
+[edit]
+    command = "vim"

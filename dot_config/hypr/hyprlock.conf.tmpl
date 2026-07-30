@@ -1,0 +1,154 @@
+$home = {{ .chezmoi.homeDir }}
+$walldir = $home/Wallpapers
+$font = JetBrainsMono Nerd Font Mono
+$rwallpaper = $home/.local/bin/rwallpaper.sh
+$default_wallpaper = $walldir/.current_rhyprpaper
+
+general {
+    hide_cursor = false
+    ignore_empty_input = true
+
+    fail_timeout = 2000 # 2 seconds
+}
+
+
+auth {
+    pam {
+        enabled = true
+        module = hyprlock
+    }
+
+    fingerprint {
+        enabled = true
+        ready_message = (Scan fingerprint to unlock)
+        present_message = Scanning fingerprint
+        retry_delay = 250
+    }
+}
+
+animations {
+    enabled = true
+    bezier = linear, 1, 1, 0, 0
+    animation = fadeIn, 1, 5, linear
+    animation = fadeOut, 1, 5, linear
+    animation = inputFieldDots, 1, 2, linear
+}
+
+background {
+    path = $default_wallpaper
+    color = rgba(17, 17, 17, 1.0)
+
+    blur_passes = 1
+    blur_size = 3
+    noise = 0.0117
+    contrast = 0.8916
+    brightness = 0.8172
+    vibrancy = 0.1696
+    vibrancy_darkness = 0.05
+
+    # reload_time = 10
+    # reload_cmd = $rwallpaper
+    # crossfade_time = 5.0
+
+    zindex = -1
+}
+
+input-field {
+    monitor =
+    size = 20%, 5%
+    outline_thickness = 4
+    inner_color = rgba(0, 0, 0, 0.0) # no fill
+
+    outer_color = rgba(33ccffee) rgba(00ff99ee) 45deg
+    check_color = rgba(00ff99ee) rgba(ff6633ee) 120deg
+    fail_color = rgba(ff6633ee) rgba(ff0066ee) 40deg
+
+    font_color = rgb(143, 143, 143)
+    fade_on_empty = false
+    rounding = 15
+
+    font_family = $font
+    placeholder_text = <i>Input password...</i>
+    fail_text = $PAMFAIL
+    # fail_text = <i>$FAIL <b>($ATTEMPTS)</b></i>
+
+    # uncomment to use a letter instead of a dot to indicate the typed password
+    # dots_text_format = *
+    # dots_size = 0.4
+    dots_spacing = 0.3
+
+    # uncomment to use an input indicator that does not show the password length (similar to swaylock's input indicator)
+    # hide_input = true
+
+    position = 0, -20
+    halign = center
+    valign = center
+}
+
+# TIME
+label {
+    monitor =
+    # text = $TIME # ref. https://wiki.hyprland.org/Hypr-Ecosystem/hyprlock/#variable-substitution
+    text = $TIME12
+    font_size = 90
+    font_family = $font
+
+    position = -30, 0
+    halign = right
+    valign = top
+}
+
+# DATE
+label {
+    monitor =
+    text = cmd[update:60000] date +"%A, %d %B %Y" # update every 60 seconds
+    font_size = 25
+    font_family = $font
+
+    position = -30, -150
+    halign = right
+    valign = top
+}
+
+label {
+    monitor =
+    text = $LAYOUT[en,ru]
+    font_size = 24
+    onclick = hyprctl switchxkblayout all next
+
+    position = 250, -20
+    halign = center
+    valign = center
+}
+
+label {
+    monitor =
+    # text = Hi there, $DESC ($USER)
+    text = Hi there, $USER
+    color = rgba(200, 200, 200, 1.0)
+    font_size = 25
+    font_family = Noto Sans
+
+    position = 0, 80
+    halign = center
+    valign = center
+}
+
+image {
+    path = $default_wallpaper
+    size = 150
+    rounding = -1 # negetive value => circle
+
+    border_size = 4
+    border_color = rgba(221, 221, 221, 1.0)
+
+    # reload_time = 10
+    # reload_cmd = $rwallpaper
+
+    position = 0, 200
+    halign = center
+    valign = center
+
+    shadow_passes = 1
+    #onclick = 
+}
