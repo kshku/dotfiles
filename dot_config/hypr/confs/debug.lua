@@ -1,0 +1,27 @@
+hl.config({
+    -- Only for developers.
+    debug = {
+        overlay = false,
+        damage_blink = false,
+        gl_debugging = false,
+        vfr = true,
+        disable_logs = true,
+        disable_time = true,
+        damage_tracking = 2,
+        enable_stdout_logs = false,
+        manual_crash = 0,
+        suppress_errors = false,
+        log_damage = false,
+        disable_scale_checks = false,
+        error_limit = 5,
+        error_position = 0,
+        colored_stdout_logs = true,
+        pass = false,
+        full_cm_proto = false,
+        ds_handle_same_buffer = true,
+        ds_handle_same_buffer_fifo = true,
+        fifo_pending_workaround = false,
+        render_solitary_wo_damage = false,
+        invalidate_fp16 = 1,
+    },
+})

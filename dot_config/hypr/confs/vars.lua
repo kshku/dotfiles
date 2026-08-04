@@ -1,0 +1,6 @@
+main_mod = "SUPER"
+terminal = "kitty"
+file_manager = "dolphin"
+menu = "wofi --allow-images --allow-markup --show drun -p \"Open an application\""
+menu2 = "sh -c \"$(wofi --dmenu)\""
+rhyprpaper = "~/.local/bin/rhyprpaper.sh"
