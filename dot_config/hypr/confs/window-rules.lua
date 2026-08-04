@@ -21,3 +21,20 @@ hl.window_rule({
 
 hl.window_rule({ match = { class = "Alacritty" }, opacity = "0.9 override 0.7 override 1.0 override" })
 hl.window_rule({ match = { class = "kitty" }, opacity = "0.7 override 0.5 override 1.0 override" })
+
+hl.window_rule({
+    match = { class = ".*wofi.*" },
+    rounding = 16,
+    opacity = "0.95 override 0.95 override 1.0 override",
+})
+
+hl.window_rule({
+    match = { class = "^Dunst$" },
+    rounding = 16,
+    opacity = "0.92 override 0.92 override 1.0 override",
+})
+
+hl.layer_rule({
+    match = { namespace = "wob" },
+    no_anim = true,
+})

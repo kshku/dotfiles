@@ -17,6 +17,13 @@ packages:
     - pamixer
     - hyprpicker
     - hyprshot
+    - wob
+    - wofi
+    - playerctl
+    - pavucontrol
+    - networkmanager
+    - bluez-utils
+    - nerd-fonts
   aur:
     - hyprqt6engine
     - adwaita-qt5

@@ -1,0 +1,94 @@
+@define-color accent   #33ccff;
+@define-color text     #ffffff;
+@define-color subtext  rgba(255, 255, 255, 0.7);
+@define-color hover    rgba(0, 0, 0, 0.2);
+@define-color select   rgba(51, 204, 255, 0.25);
+
+window {
+    margin: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    background-color: rgba(10, 10, 14, 0.65);
+    font-family: "JetBrainsMono Nerd Font Mono";
+    font-size: 13px;
+    color: @text;
+}
+
+#input {
+    margin: 12px 12px 0px 12px;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 14px;
+    background-color: rgba(0, 0, 0, 0.25);
+    color: @text;
+    font-family: "JetBrainsMono Nerd Font Mono";
+    font-size: 14px;
+}
+
+#input:focus {
+    border: 1px solid rgba(51, 204, 255, 0.4);
+    background-color: rgba(0, 0, 0, 0.35);
+}
+
+#input image {
+    color: @accent;
+}
+
+#inner-box {
+    margin: 12px;
+    border: none;
+    background-color: transparent;
+}
+
+#outer-box {
+    border: none;
+    background-color: transparent;
+}
+
+#scroll {
+    border: none;
+    background-color: transparent;
+}
+
+#entry {
+    margin: 2px 0px;
+    padding: 9px 14px;
+    border: none;
+    border-radius: 12px;
+    background-color: transparent;
+}
+
+#entry:selected {
+    background-color: @select;
+    border: 1px solid rgba(51, 204, 255, 0.35);
+    outline: none;
+}
+
+#entry image {
+    margin-right: 10px;
+    color: @subtext;
+}
+
+#entry:selected image {
+    color: @accent;
+}
+
+#text {
+    color: @text;
+}
+
+#text:selected {
+    color: #ffffff;
+}
+
+#expander-box {
+    background-color: transparent;
+}
+
+#category {
+    color: @subtext;
+}
+
+#category:selected {
+    color: @accent;
+}

@@ -80,6 +80,18 @@ tooltip {
     padding: 0px 10px 0px 5px;
 }
 
+#custom-notif-dismiss {
+    font-size: 20px;
+    padding: 0px 8px 0px 0px;
+}
+
+#custom-media {
+    font-size: 13px;
+    padding: 0px 8px;
+    margin: 0px 5px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
 #privacy {
     padding-right: 5px;
 }
