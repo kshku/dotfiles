@@ -161,6 +161,13 @@ tooltip {
     background-color: rgba(255, 180, 80, 0.2);
 }
 
+#network#ethernet {
+    padding: 0px 5px;
+    margin: 0px 5px;
+    background-color: rgba(80, 160, 255, 0.2);
+    transition: background-color 0.5s;
+}
+
 #bluetooth {
     padding: 0px 5px;
     margin: 0px 5px;
@@ -294,6 +301,7 @@ tooltip {
 #temperature,
 #backlight,
 #network,
+#network#ethernet,
 #pulseaudio,
 #wireplumber,
 #custom-media,

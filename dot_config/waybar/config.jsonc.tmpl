@@ -24,6 +24,7 @@
         "tray",
         "idle_inhibitor",
         "network",
+        "network#ethernet",
         "bluetooth",
         "battery",
         "backlight",
@@ -117,8 +118,8 @@
             "󰃟",
             "󰃠"
         ],
-        "on-scroll-up": "brightnessctl -q set 5%+ && ~/.local/bin/wob-bright.sh",
-        "on-scroll-down": "brightnessctl -q set 5%- && ~/.local/bin/wob-bright.sh"
+        "on-scroll-up": "brightnessctl -q set 1%+ && ~/.local/bin/wob-bright.sh",
+        "on-scroll-down": "brightnessctl -q set 1%- && ~/.local/bin/wob-bright.sh"
     },
 
     "battery": {
@@ -148,7 +149,7 @@
 
     "bluetooth": {
         "format": " {status}",
-        "format-disabled": " {status}",
+        "format-disabled": "󰂲",
         "on-click": "~/.local/bin/wmenu-bt.sh",
         "format-connected": " {num_connections}",
         "tooltip-format": "{device_alias}",
@@ -157,12 +158,22 @@
     },
 
     "network": {
-        "interface": "wlan0",
-        "format-wifi": "  {signalStrength}%",
+        "interface": "w*",
+        "format-wifi": "󰇫  {signalStrength}%",
         "format-ethernet": "{ipaddr}/{cidr}",
         "tooltip-format": "{essid} - {ifname} via {gwaddr}",
         "format-linked": "{ifname} (No IP)",
         "format-disconnected": "Disconnected ⚠",
+        "format-disabled": "󰤭",
+        "on-click": "~/.local/bin/wmenu-wifi.sh"
+    },
+
+    "network#ethernet": {
+        "interface": "e*",
+        "format-ethernet": "󰈀 {ipaddr}/{cidr}",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "format-disconnected": "",
+        "format-disabled": "",
         "on-click": "~/.local/bin/wmenu-wifi.sh"
     },
 
@@ -218,8 +229,8 @@
         "tooltip": false,
         "format-muted": " Muted",
         "on-click": "pamixer -t && ~/.local/bin/wob-vol.sh",
-        "on-scroll-up": "pamixer -i 5 && ~/.local/bin/wob-vol.sh",
-        "on-scroll-down": "pamixer -d 5 && ~/.local/bin/wob-vol.sh",
+        "on-scroll-up": "pamixer -i 1 && ~/.local/bin/wob-vol.sh",
+        "on-scroll-down": "pamixer -d 1 && ~/.local/bin/wob-vol.sh",
         "scroll-step": 100,
         "format-icons": {
             "headphone": "",
@@ -241,8 +252,8 @@
         "format-source": " {volume}%",
         "format-source-muted": " Muted",
         "on-click": "pamixer --default-source -t && ~/.local/bin/wob-mic.sh",
-        "on-scroll-up": "pamixer --default-source -i 5 && ~/.local/bin/wob-mic.sh",
-        "on-scroll-down": "pamixer --default-source -d 5 && ~/.local/bin/wob-mic.sh",
+        "on-scroll-up": "pamixer --default-source -i 1 && ~/.local/bin/wob-mic.sh",
+        "on-scroll-down": "pamixer --default-source -d 1 && ~/.local/bin/wob-mic.sh",
         "scroll-step": 100
     },
 
