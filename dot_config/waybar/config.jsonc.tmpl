@@ -63,8 +63,8 @@
         },
         "show-special": true,
         // "special-visible-only": true,
-        "on-scroll-up": "hyprctl dispatch workspace e-1",
-        "on-scroll-down": "hyprctl dispatch workspace e+1"
+        "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e-1\" })'",
+        "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e+1\" })'"
     },
     
     "hyprland/window": {
@@ -288,7 +288,7 @@
         "format": "󰗼",
         "tooltip": true,
         "tooltip-format": "Log out",
-        "on-click": "hyprctl dispatch exit"
+        "on-click": "hyprctl dispatch 'hl.dsp.exit()'"
     },
 
     "custom/lock": {
