@@ -6,5 +6,30 @@
   "plugin": [
     "@tarquinen/opencode-dcp@latest",
     "superpowers@git+https://github.com/obra/superpowers.git"
-  ]
+  ],
+  "provider": {
+    "ollama": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Ollama (local)",
+      "options": {
+        "baseURL": "http://localhost:11434/v1"
+      },
+      "models": {
+        "qwen3-coder-32k": {
+          "name": "Qwen Coder 32k",
+          "limit": {
+            "context": 32768,
+            "output": 8192
+          }
+        },
+        "qwen3-coder-64k": {
+          "name": "Qwen Coder 64k",
+          "limit": {
+            "context": 65536,
+            "output": 8192
+          }
+        }
+      }
+    }
+  }
 }
