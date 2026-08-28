@@ -21,6 +21,10 @@ if test -d "$HOME/go/bin"
     set -gx PATH $PATH $HOME/go/bin
 end
 
+if test -d "$HOME/.cargo/bin"
+    set -gx PATH $PATH $HOME/.cargo/bin
+end
+
 if command -v uv >/dev/null 2>&1
     uv generate-shell-completion fish | source
 end

@@ -10,6 +10,7 @@ alias la='ls -a'
 export ANDROID_HOME="$HOME/Android/Sdk"
 export PATH="$PATH:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools"
 export PATH="$PATH:$HOME/go/bin"
+[ -d "$HOME/.cargo/bin" ] && export PATH="$PATH:$HOME/.cargo/bin"
 
 if command -v pyenv 1>/dev/null 2>&1
 then
