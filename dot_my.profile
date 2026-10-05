@@ -22,3 +22,8 @@ if command -v uv 1>/dev/null 2>&1
 then
     eval "$(uv generate-shell-completion $(basename $SHELL))"
 fi
+
+if command -v java 1>/dev/null 2>&1
+then
+    export JAVA_HOME=$(dirname "$(dirname "$(readlink -f "$(command -v java)")")")
+fi

@@ -28,3 +28,7 @@ end
 if command -v uv >/dev/null 2>&1
     uv generate-shell-completion fish | source
 end
+
+if command -v java >/dev/null 2>&1
+    set -gx JAVA_HOME (dirname (dirname (readlink -f (command -v java))))
+end
