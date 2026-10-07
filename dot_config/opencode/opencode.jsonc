@@ -1,11 +1,106 @@
 {
   "$schema": "https://opencode.ai/config.json",
+
+  // =====================================================================
+  // STAGED V2 BLOCK — commented out for now.
+  //
+  // A second machine still runs OpenCode V1, and this file is synced to it
+  // by chezmoi. The published $schema above still serves the V1 shape with
+  // "additionalProperties": false, and V1 may validate strictly rather than
+  // silently dropping unknown keys — so the V2 names below could break it.
+  //
+  // V2 already reads the active V1 section natively, with no warnings, so
+  // nothing here is blocked by waiting.
+  //
+  // TO UPGRADE: uncomment this block, delete the V1 section, then run
+  //   chezmoi apply && opencode plugin list
+  // Note: editors will still underline these keys until OpenCode ships a
+  // V2 schema at the URL above. That is an upstream issue, not a real error.
+  //
+  // V2 permission rules are ORDERED and the LAST match wins, so the broad
+  // "ask" must come first and the narrow allows after it. The .env rules go
+  // last of all: a blanket `read * -> allow` would otherwise silently
+  // override V2's built-in base policy that asks on *.env reads.
+  // =====================================================================
+  //
+  // "permissions": [
+  //   { "action": "*",         "resource": "*",       "effect": "ask" },
+  //   { "action": "read",      "resource": "*",       "effect": "allow" },
+  //   { "action": "glob",      "resource": "*",       "effect": "allow" },
+  //   { "action": "grep",      "resource": "*",       "effect": "allow" },
+  //   { "action": "question",  "resource": "*",       "effect": "allow" },
+  //   { "action": "compress",  "resource": "*",       "effect": "allow" },
+  //   { "action": "todowrite", "resource": "*",       "effect": "allow" },
+  //   { "action": "read",      "resource": "*.env",   "effect": "ask" },
+  //   { "action": "read",      "resource": "*.env.*", "effect": "ask" }
+  // ],
+  //
+  // "plugins": [
+  //   "@tarquinen/opencode-dcp@latest",
+  //   "superpowers@git+https://github.com/obra/superpowers.git",
+  //   // Intended to suppress native ollama discovery, which publishes twins
+  //   // like `qwen3-coder-32k:latest` carrying the model's NATIVE 262144
+  //   // context instead of the 32k/64k windows set below. NOTE: this is a
+  //   // no-op in v2.0.24 — all 87 builtins are listed and none is
+  //   // `opencode.provider.ollama`, even though the docs name that ID.
+  //   "-opencode.provider.ollama"
+  // ],
+  //
+  // "providers": {
+  //   "ollama": {
+  //     "name": "Ollama (local)",
+  //     "package": "aisdk:@ai-sdk/openai-compatible",
+  //     "settings": {
+  //       "baseURL": "http://localhost:11434/v1"
+  //     },
+  //     "models": {
+  //       "qwen3-coder-32k": {
+  //         "name": "Qwen Coder 32k",
+  //         "limit": { "context": 32768, "output": 8192 }
+  //       },
+  //       "qwen3-coder-64k": {
+  //         "name": "Qwen Coder 64k",
+  //         "limit": { "context": 65536, "output": 8192 }
+  //       }
+  //     }
+  //   }
+  // },
+
+  // =====================================================================
+  // ACTIVE — V1 field names, read natively by both V1 and V2.
+  //
+  // Ask on everything by default, then allow the read-only surface plus the
+  // two actions that must never prompt:
+  //   compress  — DCP drives compaction internally and cannot service an
+  //               approval prompt, so asking here breaks it.
+  //   todowrite — plan/todo bookkeeping, no side effects outside the session.
+  //
+  // Verified against this install's logs rather than the docs: the actions
+  // actually evaluated here are bash, compress, edit, external_directory,
+  // glob, grep, read, skill, task, todowrite, webfetch, websearch.
+  // =====================================================================
   "permission": {
-      "*": "ask"
+    "*": "ask",
+    "read": {
+      "*": "allow",
+      "*.env": "ask",
+      "*.env.*": "ask"
+    },
+    "glob": "allow",
+    "grep": "allow",
+    "question": "allow",
+    "compress": "allow",
+    "todowrite": "allow"
   },
   "plugin": [
     "@tarquinen/opencode-dcp@latest",
-    "superpowers@git+https://github.com/obra/superpowers.git"
+    "superpowers@git+https://github.com/obra/superpowers.git",
+    // See the note in the staged V2 block: documented as the ollama
+    // discovery kill-switch, but it matches no builtin in v2.0.24, so it
+    // changes nothing today. Kept so it starts working if a release adds
+    // the plugin ID. The discovered `:latest` twins are still present and
+    // still carry the wrong (262144) context.
+    "-opencode.provider.ollama"
   ],
   "provider": {
     "ollama": {
