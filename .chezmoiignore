@@ -1,0 +1,8 @@
+# Local OpenCode plugin-development artifacts.
+# These are machine-local (npm install output), never synced.
+# Without this entry chezmoi would delete the live file on machines where
+# the source copy is absent.
+dot_config/opencode/package.json
+dot_config/opencode/package-lock.json
+dot_config/opencode/node_modules
+dot_config/opencode/bun.lock

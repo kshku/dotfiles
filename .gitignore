@@ -1,0 +1,5 @@
+# Machine-local OpenCode plugin-development artifacts (see .chezmoiignore)
+dot_config/opencode/package.json
+dot_config/opencode/package-lock.json
+dot_config/opencode/node_modules
+dot_config/opencode/bun.lock
