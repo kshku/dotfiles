@@ -5,6 +5,8 @@ export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
 
 alias la='ls -a'
 
+alias protege='env JAVA_TOOL_OPTIONS="-Djava.net.preferIPv4Stack=true" protege'
+
 # [ -d "$HOME/Dev/flutter/bin" ] && export PATH="$HOME/Dev/flutter/bin:$PATH"
 
 export ANDROID_HOME="$HOME/Android/Sdk"

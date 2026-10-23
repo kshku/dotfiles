@@ -12,6 +12,8 @@ end
 
 alias la='ls -a'
 
+alias protege='env JAVA_TOOL_OPTIONS="-Djava.net.preferIPv4Stack=true" protege'
+
 if test -d "$HOME/Android/Sdk"
     set -gx ANDROID_HOME "$HOME/Android/Sdk"
     set -gx PATH $PATH $ANDROID_HOME/cmdline-tools/latest/bin $ANDROID_HOME/platform-tools
