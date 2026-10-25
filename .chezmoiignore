@@ -20,8 +20,5 @@ dot_config/opencode/bun.lock
 .config/fish/
 
 # Ignore Hyprland configs - Caelestia will manage them
-.config/hypr/
 
 # Caelestia manages these directly
-.config/hypr/
-.config/fish/
