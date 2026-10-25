@@ -12,3 +12,6 @@ dot_config/opencode/package.json
 dot_config/opencode/package-lock.json
 dot_config/opencode/node_modules
 dot_config/opencode/bun.lock
+
+# Ignore Hyprland configs - Caelestia will manage them
+.config/hypr/
