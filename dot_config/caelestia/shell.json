@@ -22,89 +22,89 @@
         "activeWindow": {
             "inverted": true
         },
-        "tray": {
-            "background": true,
-            "recolour": false,
-            "compact": false
-        },
         "clock": {
             "background": true,
             "showDate": false,
             "showIcon": true
         },
-        "statusIcons": [
-            {
-                "id": "lockStatus",
-                "enabled": true
-            },
-            {
-                "id": "audio",
-                "enabled": true
-            },
-            {
-                "id": "microphone",
-                "enabled": true
-            },
-            {
-                "id": "kbLayout",
-                "enabled": false
-            },
-            {
-                "id": "network",
-                "enabled": true
-            },
-            {
-                "id": "bluetooth",
-                "enabled": true
-            },
-            {
-                "id": "battery",
-                "enabled": true
-            }
-        ],
         "entries": [
             {
-                "id": "logo",
-                "enabled": false
+                "enabled": false,
+                "id": "logo"
             },
             {
-                "id": "workspaces",
-                "enabled": true
+                "enabled": true,
+                "id": "workspaces"
             },
             {
-                "id": "spacer",
-                "enabled": true
+                "enabled": true,
+                "id": "spacer"
             },
             {
-                "id": "activeWindow",
-                "enabled": true
+                "enabled": true,
+                "id": "activeWindow"
             },
             {
-                "id": "spacer",
-                "enabled": true
+                "enabled": true,
+                "id": "spacer"
             },
             {
-                "id": "tray",
-                "enabled": true
+                "enabled": true,
+                "id": "tray"
             },
             {
-                "id": "clock",
-                "enabled": true
+                "enabled": true,
+                "id": "clock"
             },
             {
-                "id": "statusIcons",
-                "enabled": true
+                "enabled": true,
+                "id": "statusIcons"
             },
             {
-                "id": "power",
-                "enabled": false
+                "enabled": false,
+                "id": "power"
             }
-        ]
+        ],
+        "statusIcons": [
+            {
+                "enabled": true,
+                "id": "lockStatus"
+            },
+            {
+                "enabled": true,
+                "id": "audio"
+            },
+            {
+                "enabled": true,
+                "id": "microphone"
+            },
+            {
+                "enabled": false,
+                "id": "kbLayout"
+            },
+            {
+                "enabled": true,
+                "id": "network"
+            },
+            {
+                "enabled": true,
+                "id": "bluetooth"
+            },
+            {
+                "enabled": true,
+                "id": "battery"
+            }
+        ],
+        "tray": {
+            "background": true,
+            "compact": false,
+            "recolour": false
+        }
     },
     "border": {
-        "thickness": 10,
         "rounding": 25,
-        "smoothing": 20
+        "smoothing": 20,
+        "thickness": 10
     },
     "dashboard": {
         "showClockSeconds": true
@@ -174,73 +174,70 @@
         }
     },
     "launcher": {
-        "showOnHover": false,
         "enableDangerousActions": true,
+        "showOnHover": false,
+        "useFuzzy": {
+            "actions": false,
+            "apps": false,
+            "schemes": false,
+            "variants": false,
+            "wallpapers": false
+        },
         "vimKeybinds": true
     },
     "lock": {
-        "useWallpaper": false,
+        "hideNotifs": false,
         "recolourLogo": false,
-        "hideNotifs": false
-    },
-    "nexus": {
-    },
-    "notifs": {
+        "useWallpaper": false
     },
     "osd": {
-        "enabled": true,
-        "hideDelay": 2000,
         "enableBrightness": true,
-        "enableMicrophone": true
+        "enableMicrophone": true,
+        "enabled": true,
+        "hideDelay": 2000
     },
     "services": {
         "audioIncrement": 0.01,
         "brightnessIncrement": 0.01,
-        "maxVolume": 1.0,
+        "maxVolume": 1,
         "smartScheme": true
     },
     "session": {
         "vimKeybinds": true
     },
-    "sidebar": {
-    },
     "utilities": {
-        "toasts": {
-            "nowPlaying": true
-        },
-        "vpn": {
-        },
         "quickToggles": [
             {
-                "id": "wifi",
-                "enabled": true
+                "enabled": true,
+                "id": "wifi"
             },
             {
-                "id": "bluetooth",
-                "enabled": true
+                "enabled": true,
+                "id": "bluetooth"
             },
             {
-                "id": "mic",
-                "enabled": true
+                "enabled": true,
+                "id": "mic"
             },
             {
-                "id": "settings",
-                "enabled": true
+                "enabled": true,
+                "id": "settings"
             },
             {
-                "id": "gameMode",
-                "enabled": true
+                "enabled": true,
+                "id": "gameMode"
             },
             {
-                "id": "dnd",
-                "enabled": true
+                "enabled": true,
+                "id": "dnd"
             },
             {
-                "id": "vpn",
-                "enabled": true
+                "enabled": true,
+                "id": "vpn"
             }
-        ]
-    },
-    "paths": {
+        ],
+        "toasts": {
+            "nowPlaying": true
+        }
     }
 }
