@@ -1,5 +1,5 @@
 main_mod = "SUPER"
-run_command = "sh -c \"$(wofi --dmenu -p 'Run a command')\""
+run_command = "fuzzel --dmenu -p 'Run a command:'"
 random_wallpaper = "caelestia wallpaper -r"
 
 hl.bind(main_mod .. " + R", hl.dsp.exec_cmd(random_wallpaper))
