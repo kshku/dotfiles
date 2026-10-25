@@ -4,7 +4,243 @@
             "enabled": true
         }
     },
+    "background": {
+        "desktopClock": {
+            "background": {
+                "enabled": false
+            },
+            "enabled": true
+        },
+        "enabled": true,
+        "visualiser": {
+            "autoHide": true,
+            "enabled": true
+        },
+        "wallpaperEnabled": true
+    },
+    "bar": {
+        "activeWindow": {
+            "inverted": true
+        },
+        "tray": {
+            "background": true,
+            "recolour": false,
+            "compact": false
+        },
+        "clock": {
+            "background": true,
+            "showDate": false,
+            "showIcon": true
+        },
+        "statusIcons": [
+            {
+                "id": "lockStatus",
+                "enabled": true
+            },
+            {
+                "id": "audio",
+                "enabled": true
+            },
+            {
+                "id": "microphone",
+                "enabled": true
+            },
+            {
+                "id": "kbLayout",
+                "enabled": false
+            },
+            {
+                "id": "network",
+                "enabled": true
+            },
+            {
+                "id": "bluetooth",
+                "enabled": true
+            },
+            {
+                "id": "battery",
+                "enabled": true
+            }
+        ],
+        "entries": [
+            {
+                "id": "logo",
+                "enabled": false
+            },
+            {
+                "id": "workspaces",
+                "enabled": true
+            },
+            {
+                "id": "spacer",
+                "enabled": true
+            },
+            {
+                "id": "activeWindow",
+                "enabled": true
+            },
+            {
+                "id": "spacer",
+                "enabled": true
+            },
+            {
+                "id": "tray",
+                "enabled": true
+            },
+            {
+                "id": "clock",
+                "enabled": true
+            },
+            {
+                "id": "statusIcons",
+                "enabled": true
+            },
+            {
+                "id": "power",
+                "enabled": false
+            }
+        ]
+    },
+    "border": {
+        "thickness": 10,
+        "rounding": 25,
+        "smoothing": 20
+    },
+    "dashboard": {
+        "showClockSeconds": true
+    },
+    "general": {
+        "apps": {
+            "terminal": [
+                "kitty"
+            ]
+        },
+        "battery": {
+            "criticalLevel": 3,
+            "warnLevels": [
+                {
+                    "critical": false,
+                    "icon": "battery_android_frame_2",
+                    "level": 50,
+                    "message": "You might want to plug in a charger",
+                    "title": "Low battery"
+                },
+                {
+                    "critical": false,
+                    "icon": "battery_android_frame_1",
+                    "level": 35,
+                    "message": "You should probably plug in a charger <b>now</b>",
+                    "title": "Did you see the previous message?"
+                },
+                {
+                    "critical": true,
+                    "icon": "battery_android_alert",
+                    "level": 20,
+                    "message": "PLUG THE CHARGER RIGHT NOW!!",
+                    "title": "Critical battery level"
+                }
+            ]
+        },
+        "idle": {
+            "timeouts": [
+                {
+                    "enabled": true,
+                    "idleAction": "lock",
+                    "inhibitWhenAudio": false,
+                    "inhibitWhenCharging": false,
+                    "respectInhibitors": true,
+                    "timeout": 60
+                },
+                {
+                    "enabled": true,
+                    "idleAction": "dpms off",
+                    "inhibitWhenAudio": false,
+                    "inhibitWhenCharging": false,
+                    "respectInhibitors": true,
+                    "returnAction": "dpms on",
+                    "timeout": 300
+                },
+                {
+                    "enabled": true,
+                    "idleAction": [
+                        "suspendThenHibernate"
+                    ],
+                    "inhibitWhenAudio": false,
+                    "inhibitWhenCharging": false,
+                    "respectInhibitors": true,
+                    "timeout": 600
+                }
+            ]
+        }
+    },
+    "launcher": {
+        "showOnHover": false,
+        "enableDangerousActions": true,
+        "vimKeybinds": true
+    },
+    "lock": {
+        "useWallpaper": false,
+        "recolourLogo": false,
+        "hideNotifs": false
+    },
+    "nexus": {
+    },
+    "notifs": {
+    },
+    "osd": {
+        "enabled": true,
+        "hideDelay": 2000,
+        "enableBrightness": true,
+        "enableMicrophone": true
+    },
+    "services": {
+        "audioIncrement": 0.01,
+        "brightnessIncrement": 0.01,
+        "maxVolume": 1.0,
+        "smartScheme": true
+    },
+    "session": {
+        "vimKeybinds": true
+    },
+    "sidebar": {
+    },
+    "utilities": {
+        "toasts": {
+            "nowPlaying": true
+        },
+        "vpn": {
+        },
+        "quickToggles": [
+            {
+                "id": "wifi",
+                "enabled": true
+            },
+            {
+                "id": "bluetooth",
+                "enabled": true
+            },
+            {
+                "id": "mic",
+                "enabled": true
+            },
+            {
+                "id": "settings",
+                "enabled": true
+            },
+            {
+                "id": "gameMode",
+                "enabled": true
+            },
+            {
+                "id": "dnd",
+                "enabled": true
+            },
+            {
+                "id": "vpn",
+                "enabled": true
+            }
+        ]
+    },
     "paths": {
-	"wallpaperDir": "~/Wallpapers"
     }
 }
