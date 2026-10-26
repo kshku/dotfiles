@@ -23,13 +23,19 @@ hl.config({
         enable_swallow = true,
         swallow_regex = "Alacritty|kitty",
         swallow_exception_regex = "[wx]ev",
-    }
+    },
+    decoration = {
+        active_opacity = 1.0,
+        inactive_opacity = 0.7,
+        fullscreen_opacity = 1.0,
+    },
 })
 
 hl.window_rule({ match = { class = "Alacritty|kitty" }, opacity = "0.8 override 0.6 override 1.0 override" })
 
 hl.window_rule({
-    match = { class = ".*wofi.*" },
-    rounding = 16,
-    opacity = "0.95 override 0.95 override 1.0 override",
+    name = "supprss-maximize-events",
+    match = { class = ".*" },
+    suppress_event = "maximize",
 })
+
