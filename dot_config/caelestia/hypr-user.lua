@@ -2,6 +2,10 @@ main_mod = "SUPER"
 run_command = "fuzzel --dmenu -p 'Run a command:' | sh -"
 random_wallpaper = "caelestia wallpaper -r"
 
+hl.timer(function()
+    hl.exec_cmd(random_wallpaper)
+end, { timeout = 1000 * 60 * 1, type = "repeat" })
+
 hl.bind(main_mod .. " + R", hl.dsp.exec_cmd(random_wallpaper))
 hl.bind(main_mod .. " + T", hl.dsp.layout("togglesplit"))
 hl.bind(main_mod .. " + SHIFT + W", hl.dsp.window.toggle_swallow())
