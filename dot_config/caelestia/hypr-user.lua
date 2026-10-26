@@ -4,7 +4,7 @@ random_wallpaper = "caelestia wallpaper -r"
 
 hl.timer(function()
     hl.exec_cmd(random_wallpaper)
-end, { timeout = 1000 * 60 * 1, type = "repeat" })
+end, { timeout = 1000 * 60 * 10, type = "repeat" })
 
 hl.bind(main_mod .. " + R", hl.dsp.exec_cmd(random_wallpaper))
 hl.bind(main_mod .. " + T", hl.dsp.layout("togglesplit"))
