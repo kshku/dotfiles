@@ -5,7 +5,7 @@ return {
     terminal                   = "kitty",
     browser                    = "firefox",
     editor                     = "code",
-    fileExplorer               = "thunar",
+    fileExplorer               = "dolphin",
     audioSettings              = "pwvucontrol",
 
     -- Touchpad
