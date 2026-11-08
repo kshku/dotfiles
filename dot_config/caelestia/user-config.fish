@@ -12,7 +12,8 @@ end
 
 alias la='ls -a'
 
-alias protege='env JAVA_TOOL_OPTIONS="-Djava.net.preferIPv4Stack=true" protege'
+#alias protege='env JAVA_TOOL_OPTIONS="-Djava.net.preferIPv4Stack=true" protege'
+alias protege='~/Protege/run.sh'
 
 if test -d "$HOME/Android/Sdk"
     set -gx ANDROID_HOME "$HOME/Android/Sdk"

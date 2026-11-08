@@ -39,7 +39,7 @@ hl.window_rule({ match = { class = "Alacritty|kitty" }, opacity = "0.8 override 
 
 hl.window_rule({
     name = "supprss-maximize-events",
-    match = { class = ".*" },
+    match = { class = "kitty" },
     suppress_event = "maximize",
 })
 
