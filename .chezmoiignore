@@ -1,24 +1,25 @@
-# Local OpenCode plugin-development artifacts. Machine-local npm output,
-# never synced.
+# Local OpenCode artifacts that must never be synced.
 #
-# None of these are in the source tree right now, so these entries are
-# inert — `chezmoi ignored` comes back empty. They only bite if someone
-# re-adds one, stopping chezmoi writing it back out to a machine.
+# Patterns here match the TARGET path (relative to ~), NOT the source path,
+# so they are written `.config/opencode/...` rather than `dot_config/...`.
 #
-# They are NOT what protects an existing target file: verified on chezmoi
-# v2.73.0 that removing a source entry leaves the target file in place
-# with or without this file.
-dot_config/opencode/package.json
-dot_config/opencode/package-lock.json
-dot_config/opencode/node_modules
-dot_config/opencode/bun.lock
+# They are inert while the file is absent from the source tree; they bite
+# only if someone re-adds one, stopping chezmoi from writing it back out.
+# They are NOT what protects an existing target file: on chezmoi v2.73.0,
+# removing a source entry leaves the target file in place with or without
+# this file.
+.config/opencode/package.json
+.config/opencode/package-lock.json
+.config/opencode/bun.lock
+.config/opencode/node_modules
+.config/opencode/node_modules/**
+# TUI settings, edited from Ctrl+P > Open settings. Machine-local.
+.config/opencode/cli.json
+# Holds the background-service password. Secret, never tracked.
+.config/opencode/service.json
 
 # Ignore Hyprland configs - Caelestia will manage them
 .config/hypr/
 
 # Ignore fish configs - Caelestia will manage them
 .config/fish/
-
-# Ignore Hyprland configs - Caelestia will manage them
-
-# Caelestia manages these directly

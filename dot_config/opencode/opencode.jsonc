@@ -40,14 +40,7 @@
 
   "plugins": [
     "@tarquinen/opencode-dcp@latest",
-    "superpowers@git+https://github.com/obra/superpowers.git",
-    // Intended to suppress native ollama discovery, which publishes twins
-    // like `qwen3-coder-32k:latest` carrying the model's NATIVE 262144
-    // context instead of the 64k window set below. NOTE: this was a no-op in
-    // v2.0.24 — all builtins were listed and none was
-    // `opencode.provider.ollama`, even though the docs name that ID. Kept so
-    // it starts working if a release adds the plugin ID.
-    "-opencode.provider.ollama"
+    "superpowers@git+https://github.com/obra/superpowers.git"
   ],
 
   "providers": {
